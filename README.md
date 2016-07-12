@@ -1,5 +1,6 @@
 == README
-See the live version of this app at [Heroku](http://recipefindersw.herokuapp.com/?search=beef)
+
+See the live version of this app at [Heroku](http://recipefindersw.herokuapp.com/?search=beef).
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
