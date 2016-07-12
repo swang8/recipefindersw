@@ -1,0 +1,29 @@
+<h1>Searching results for recipes contains <b><%= @search %> </b></h1>
+<hr>
+<% if @recipes.size == 0 %>
+  <p> No recipe found for <%= @search %>. Please try others..</p>
+<% else %>
+  <table border='1'>
+  <tr>
+    <% @fields.each do |f| %>
+    <th><%= f %></th>
+    <% end %>
+  </tr>
+  <% @recipes.each do |r| %>
+  <tr class=<%= cycle("even_row", "odd_row") %> >
+    <% @fields.each do |f| %>
+      <% if f.match('image_url') %>
+        <td><%= link_to image_tag(r[f]), r['f2f_url'] %></td>
+      <% elsif f.match('url') %>
+          <td><%= link_to (sanitize r[f]), r[f] %></td>
+      <% else %>
+        <td><%= link_to (sanitize r[f]), r['f2f_url'] %></td>
+      <% end %>
+    <% end %>
+  </tr>
+  <% end %>
+  </table>
+<% end %>
+<footer>
+  <p> Powered By Food2Fork.com </p>
+</footer>
